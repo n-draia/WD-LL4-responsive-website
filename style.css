@@ -1,0 +1,203 @@
+/* Basic reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the header and hero section with the same green background */
+header, .hero {
+  background-color: #e0f7e9; /* Light green for eco-friendly feel */
+}
+
+/* Logo styling */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e7d32; /* Dark green */
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Navigation styles */
+nav {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack links vertically on mobile */
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 8px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #388e3c; /* Medium green */
+  font-size: 1.1rem;
+  padding: 6px 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover {
+  background: #c8e6c9; /* Lighter green on hover */
+}
+
+/* Hero section styles */
+.hero {
+  text-align: center;
+  padding: 48px 16px 40px 16px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #2e7d32; /* Dark green */
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 24px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #43a047; /* Green */
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.cta-btn:hover {
+  background: #388e3c; /* Darker green on hover */
+}
+
+/* Destinations section styles */
+.destinations {
+  padding: 20px 16px;
+  background: #fff;
+  text-align: center;
+}
+
+.destinations h2 {
+  color: #2e7d32; /* Dark green */
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+.card-container {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack cards vertically on mobile */
+  gap: 24px; /* Space between cards */
+  align-items: center;
+}
+
+.card {
+  background: #f1f8e9; /* Light green background */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60, 80, 60, 0.08);
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
+  min-height: 320px; /* Ensures all cards have the same minimum height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Space out content vertically */
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; /* Needed for overlay positioning */
+}
+
+.card:hover {
+  /* Slightly lift the card and add a stronger shadow on hover */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(60, 80, 60, 0.16);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 0; /* Remove extra space under the image */
+}
+
+.card h3 {
+  color: #388e3c;
+  font-size: 1.1rem;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 125, 50, 0.92); /* Semi-transparent dark green */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Desktop styles: show nav links horizontally */
+@media (min-width: 600px) {
+  .logo {
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 32px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+  }
+  .nav-links {
+    flex-direction: row; /* Horizontal layout */
+    justify-content: flex-end;
+  }
+  .nav-links li {
+    margin: 0 12px;
+  }
+  /* Make hero headline bigger on desktop */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .card-container {
+    flex-direction: row; /* Row layout on desktop */
+    justify-content: center;
+    gap: 32px;
+  }
+  .card {
+    max-width: 240px;
+    min-height: 320px; /* Keep same min height on desktop */
+  }
+}
+
+/* Comments are included to help beginners understand each part of the code */
